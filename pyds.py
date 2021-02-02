@@ -269,6 +269,15 @@ class MassFunction(dict):
                 return 0.0
             else:
                 return fsum([v for (h, v) in self.items() if hypothesis & h])
+
+    def dis(self):
+        mydict = {}
+        for key,val in self.pl().items():
+            mydict.update({
+                key : 1-val
+            })
+        
+        return mydict
     
     def q(self, hypothesis=None):
         """
